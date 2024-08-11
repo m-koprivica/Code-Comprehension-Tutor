@@ -1,7 +1,6 @@
-# Project-Groups-06-Lab-A
+# Code Comprehension Tutor
 
-**Project:** Code Comprehension Tutor  
-**Group:** Daniel Lee, Matija Koprivica, Arshvir Bhandal, Mark Zhu, Chuyi Zheng  
+**Group Members:** Daniel Lee, Matija Koprivica, Arshvir Bhandal, Mark Zhu, Chuyi Zheng  
 
 **Description**
 
@@ -9,21 +8,15 @@ The project enables students to answer questions where they describe the purpose
 
 The project also includes a gradebook and tools related to question management. The gradebook enables a researcher to view the scores of each student for each question. The question management tools allow a researcher to add new questions and edit the code or tests of existing ones.
 
-**Feature Core**
+**Features**
 
-- Register
-- Login
-- Logout
-- Question Bank
-- Question
-
-**Feature Unique**
-
-- Tutorial (Minor)
-- Change Password (Minor)
-- Delete Account (Minor)
-- Gradebook (Major)
-- Question Management (Major)
+- Register, Login, and Logout
+- Question Bank with pre-written questions
+- Tutorial page
+- Change Password
+- Delete Account
+- Gradebook
+- Question Management
 
 **Student vs Researcher**
 
