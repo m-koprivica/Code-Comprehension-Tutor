@@ -1,0 +1,373 @@
+{
+    "questions": [
+        {
+            "id": 1,
+            "code": "function foo() {\n\treturn \"Hello World!\";\n}",
+            "tests": [
+                {
+                    "title": "foo() should return \"Hello World!\"",
+                    "assertion": "chai.expect(global.foo()).to.equal('Hello World!');"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "code": "function foo(n) {\n\tvar val = 0;\n\tfor (let i = 0; i < n.length; i++) {\n\t\tval += n[i];\n\t}\n\treturn val;\n}",
+            "tests": [
+                {
+                    "title": "foo([]) should return 0",
+                    "assertion": "chai.expect(global.foo([])).to.equal(0);"
+                },
+                {
+                    "title": "foo([1]) should return 1",
+                    "assertion": "chai.expect(global.foo([1])).to.equal(1);"
+                },
+                {
+                    "title": "foo([1, 2]) should return 3",
+                    "assertion": "chai.expect(global.foo([1, 2])).to.equal(3);"
+                },
+                {
+                    "title": "foo([-2, 2]) should return 0",
+                    "assertion": "chai.expect(global.foo([-2, 2])).to.equal(0);"
+                },
+                {
+                    "title": "foo([5, 13, -4]) should return 14",
+                    "assertion": "chai.expect(global.foo([5, 13, -4])).to.equal(14);"
+                },
+                {
+                    "title": "foo([9, 10, 21]) should return 40",
+                    "assertion": "chai.expect(global.foo([9, 10, 21])).to.equal(40);"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "code": "function foo(n, t, e)\n{\n\tfor (let i = 0; i < n.length; i++) {\n\t\tif (n[i] === t) {\n\t\t\tn[i] = e;\n\t\t}\n\t}\n\treturn n;\n}",
+            "tests": [
+                {
+                    "title": "foo([], 4, 5) should return []",
+                    "assertion": "chai.expect(global.foo([], 4, 5)).to.eql([]);"
+                },
+                {
+                    "title": "foo([1], 4, 5) should return [1]",
+                    "assertion": "chai.expect(global.foo([1], 4, 5)).to.eql([1]);"
+                },
+                {
+                    "title": "foo([1], 1, 2) should return [2]",
+                    "assertion": "chai.expect(global.foo([1], 1, 2)).to.eql([2]);"
+                },
+                {
+                    "title": "foo([1, 2, 3], 1, 2) should return [2, 2, 3]",
+                    "assertion": "chai.expect(global.foo([1, 2, 3], 1, 2)).to.eql([2, 2, 3]);"
+                },
+                {
+                    "title": "foo([1, 2, 3], 3, 1) should return [1, 2, 1]",
+                    "assertion": "chai.expect(global.foo([1, 2, 3], 3, 1)).to.eql([1, 2, 1]);"
+                },
+                {
+                    "title": "foo([1, 2, 3], 4, 1) should return [1, 2, 3]",
+                    "assertion": "chai.expect(global.foo([1, 2, 3], 4, 1)).to.eql([1, 2, 3]);"
+                },
+                {
+                    "title": "foo([1, 2, 3], 2, 420) should return [1, 420, 3]",
+                    "assertion": "chai.expect(global.foo([1, 2, 3], 2, 420)).to.eql([1, 420, 3]);"
+                },
+                {
+                    "title": "foo([69, 21, 69], 69, 420) should return [420, 21, 420]",
+                    "assertion": "chai.expect(global.foo([69, 21, 69], 69, 420)).to.eql([420, 21, 420]);"
+                },
+                {
+                    "title": "foo([69, 69, 69], 69, 420) should return [420, 420, 420]",
+                    "assertion": "chai.expect(global.foo([69, 69, 69], 69, 420)).to.eql([420, 420, 420]);"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "code": "function foo(n)\r\n{\r\n\tif (n < 0) {\r\n\t\treturn -1;\r\n\t} else if (n == 0) {\r\n\t\treturn 1;\r\n\t} else {\r\n\t\treturn n * foo(n - 1);\r\n\t}\r\n}",
+            "tests": [
+                {
+                    "title": "foo(-2) should equal -1",
+                    "assertion": "chai.expect(global.foo(-2)).to.eql(-1);"
+                },
+                {
+                    "title": "foo(-1) should equal -1",
+                    "assertion": "chai.expect(global.foo(-1)).to.eql(-1);"
+                },
+                {
+                    "title": "foo(0) should equal 1",
+                    "assertion": "chai.expect(global.foo(0)).to.eql(1);"
+                },
+                {
+                    "title": "foo(1) should equal 1",
+                    "assertion": "chai.expect(global.foo(1)).to.eql(1);"
+                },
+                {
+                    "title": "foo(2) should equal 2",
+                    "assertion": "chai.expect(global.foo(2)).to.eql(2);"
+                },
+                {
+                    "title": "foo(3) should equal 6",
+                    "assertion": "chai.expect(global.foo(3)).to.eql(6);"
+                },
+                {
+                    "title": "foo(4) should equal 24",
+                    "assertion": "chai.expect(global.foo(4)).to.eql(24);"
+                },
+                {
+                    "title": "foo(5) should equal 120",
+                    "assertion": "chai.expect(global.foo(5)).to.eql(120);"
+                },
+                {
+                    "title": "foo(6) should equal 720",
+                    "assertion": "chai.expect(global.foo(6)).to.eql(720);"
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "code": "function foo(n)\r\n{\r\n\tif (n < 0) {\r\n\t\treturn -1;\r\n\t} else if (n == 0) {\r\n\t\treturn 0;\r\n\t} else if (n == 1) {\r\n\t\treturn 1;\r\n\t} else {\r\n\t\treturn foo(n - 1) + foo(n - 2);\r\n\t}\r\n}",
+            "tests": [
+                {
+                    "title": "foo(-2) should equal -1",
+                    "assertion": "chai.expect(global.foo(-2)).to.eql(-1);"
+                },
+                {
+                    "title": "foo(-1) should equal -1",
+                    "assertion": "chai.expect(global.foo(-1)).to.eql(-1);"
+                },
+                {
+                    "title": "foo(0) should equal 0",
+                    "assertion": "chai.expect(global.foo(0)).to.eql(0);"
+                },
+                {
+                    "title": "foo(1) should equal 1",
+                    "assertion": "chai.expect(global.foo(1)).to.eql(1);"
+                },
+                {
+                    "title": "foo(2) should equal 1",
+                    "assertion": "chai.expect(global.foo(2)).to.eql(1);"
+                },
+                {
+                    "title": "foo(3) should equal 2",
+                    "assertion": "chai.expect(global.foo(3)).to.eql(2);"
+                },
+                {
+                    "title": "foo(4) should equal 3",
+                    "assertion": "chai.expect(global.foo(4)).to.eql(3);"
+                },
+                {
+                    "title": "foo(5) should equal 5",
+                    "assertion": "chai.expect(global.foo(5)).to.eql(5);"
+                },
+                {
+                    "title": "foo(6) should equal 8",
+                    "assertion": "chai.expect(global.foo(6)).to.eql(8);"
+                }
+            ]
+        },
+        {
+            "id": 6,
+            "code": "function foo(n, m)\r\n{\r\n\tlet m_copy = new Array(m.length);\r\n\tfor (let o = 0; o < m.length; o++) {\r\n\t\tm_copy[o] = m[o] + n;\r\n\t}\r\n\treturn m_copy;\r\n}",
+            "tests": [
+                {
+                    "title": "foo(1, []) should equal []",
+                    "assertion": "chai.expect(global.foo(1, [])).to.eql([]);"
+                },
+                {
+                    "title": "foo(0, [6]) should equal [6]",
+                    "assertion": "chai.expect(global.foo(0, [6])).to.eql([6]);"
+                },
+                {
+                    "title": "foo(1, [6]) should equal [7]",
+                    "assertion": "chai.expect(global.foo(1, [6])).to.eql([7]);"
+                },
+                {
+                    "title": "foo(2, [6]) should equal [8]",
+                    "assertion": "chai.expect(global.foo(2, [6])).to.eql([8]);"
+                },
+                {
+                    "title": "foo(0, [-1, 3, 6]) should equal [-1, 3, 6]",
+                    "assertion": "chai.expect(global.foo(0, [-1, 3, 6])).to.eql([-1, 3, 6]);"
+                },
+                {
+                    "title": "foo(1, [-1, 3, 6]) should equal [0, 4, 7]",
+                    "assertion": "chai.expect(global.foo(1, [-1, 3, 6])).to.eql([0, 4, 7]);"
+                },
+                {
+                    "title": "foo(2, [-1, 3, 6]) should equal [1, 5, 8]",
+                    "assertion": "chai.expect(global.foo(2, [-1, 3, 6])).to.eql([1, 5, 8]);"
+                }
+            ]
+        },
+        {
+            "id": 7,
+            "code": "function foo(n, m) {\r\n\tlet result = [];\r\n\tfor (let i = 0; i < m.length; i++) {\r\n\t\tif (n(m[i])) {\r\n\t\t\tresult.push(m[i]);\r\n\t\t}\r\n\t}\r\n\treturn result;\r\n}",
+            "tests": [
+                {
+                    "title": "foo((a) => true, []) should equal []",
+                    "assertion": "chai.expect(global.foo((a) => true, [])).to.eql([]);"
+                },
+                {
+                    "title": "foo((a) => true, [1]) should equal [1]",
+                    "assertion": "chai.expect(global.foo((a) => true, [1])).to.eql([1]);"
+                },
+                {
+                    "title": "foo((a) => false, [1,23,345,-1222]) should equal []",
+                    "assertion": "chai.expect(global.foo((a) => false, [1,23,345,-1222])).to.eql([]);"
+                },
+                {
+                    "title": "foo((a) => a>0, [1]) should equal [1]",
+                    "assertion": "chai.expect(global.foo((a) => a>0, [1])).to.eql([1]);"
+                },
+                {
+                    "title": "foo((a) => a<0, [1]) should equal [1]",
+                    "assertion": "chai.expect(global.foo((a) => a<0, [1])).to.eql([]);"
+                },
+                {
+                    "title": "foo((a) => a>0, [1,-1,2,-3,-5,22]) should equal [1,2,22]",
+                    "assertion": "chai.expect(global.foo((a) => a>0, [1,-1,2,-3,-5,22])).to.eql([1,2,22]);"
+                },
+                {
+                    "title": "foo((a) => a<0, [1,-1,2,-3,-5,22]) should equal [-1,-3,-5]",
+                    "assertion": "chai.expect(global.foo((a) => a<0, [1,-1,2,-3,-5,22])).to.eql([-1,-3,-5]);"
+                },
+                {
+                    "title": "foo((a) => a % 10 === 0, [-10,-2,344,789,220,4560,-1000,22,0]) should equal [-10,220,4560,-1000,0]",
+                    "assertion": "chai.expect(global.foo((a) => a % 10 === 0, [-10,-2,344,789,220,4560,-1000,22,0])).to.eql([-10,220,4560,-1000,0]);"
+                }
+            ]
+        },
+        {
+            "id": 8,
+            "code": "function foo(n) {\r\n\tif (n <= 1) return false;\r\n\tif (n === 2) return true;\r\n\tfor (let i = 2; i < n; i++) {\r\n\t\tif (n % i === 0) return false;\r\n\t}\r\n\treturn true;\r\n}",
+            "tests": [
+                {
+                    "title": "foo(1) should equal false",
+                    "assertion": "chai.expect(global.foo(1)).to.eql(false);"
+                },
+                {
+                    "title": "foo(2) should equal true",
+                    "assertion": "chai.expect(global.foo(2)).to.eql(true);"
+                },
+                {
+                    "title": "foo(3) should equal true",
+                    "assertion": "chai.expect(global.foo(3)).to.eql(true);"
+                },
+                {
+                    "title": "foo(9) should equal false",
+                    "assertion": "chai.expect(global.foo(9)).to.eql(false);"
+                },
+                {
+                    "title": "foo(13) should equal true",
+                    "assertion": "chai.expect(global.foo(13)).to.eql(true);"
+                },
+                {
+                    "title": "foo(25) should equal false",
+                    "assertion": "chai.expect(global.foo(25)).to.eql(false);"
+                },
+                {
+                    "title": "foo(71) should equal true",
+                    "assertion": "chai.expect(global.foo(71)).to.eql(true);"
+                },
+                {
+                    "title": "foo(4573) should equal false",
+                    "assertion": "chai.expect(global.foo(4573)).to.eql(false);"
+                },
+                {
+                    "title": "foo(4583) should equal true",
+                    "assertion": "chai.expect(global.foo(4583)).to.eql(true);"
+                }
+            ]
+        },
+        {
+            "id": 9,
+            "code": "function foo(n, m) {\r\n\tfor (let i = 0; i < m.length; i++) {\r\n\t\tif (m[i] === n) return i;\r\n\t}\r\n\treturn -1;\r\n}",
+            "tests": [
+                {
+                    "title":"foo(1,[]) should equal -1",
+                    "assertion":"chai.expect(foo(1,[])).to.eql(-1);"
+                },
+                {
+                    "title":"foo(1,[1]) should equal 0",
+                    "assertion":"chai.expect(foo(1,[1])).to.eql(0);"
+                },
+                {
+                    "title":"foo(2,[1]) should equal -1",
+                    "assertion":"chai.expect(foo(2,[1])).to.eql(-1);"
+                },
+                {
+                    "title":"foo(1,[3,2,1]) should equal 2",
+                    "assertion":"chai.expect(foo(1,[3,2,1])).to.eql(2);"
+                },
+                {
+                    "title":"foo(2,[3,2,1]) should equal 1",
+                    "assertion":"chai.expect(foo(2,[3,2,1])).to.eql(1);"
+                },
+                {
+                    "title":"foo(20,[3,2,1]) should equal -1",
+                    "assertion":"chai.expect(foo(20,[3,2,1])).to.eql(-1);"
+                },
+                {
+                    "title":"foo(2,[22,3,44,3,344,5,2,666433,2]) should equal 6",
+                    "assertion":"chai.expect(foo(2,[22,3,44,3,344,5,2,666433,2])).to.eql(6);"
+                },
+                {
+                    "title":"foo(3,[22,3,44,3,344,5,2,666433,2]) should equal 1",
+                    "assertion":"chai.expect(foo(3,[22,3,44,3,344,5,2,666433,2])).to.eql(1);"
+                }
+            ]
+        },
+        {
+            "id": 10,
+            "code": "function foo(n) {\r\n\treturn n[0][0] * n[1][1] - n[1][0] * n[0][1];\r\n}",
+            "tests":[
+                {
+                    "title":"foo([[1,0],[0,1]]) should equal 1",
+                    "assertion":"chai.expect(foo([[1,0],[0,1]])).to.eql(1);"
+                },
+                {
+                    "title":"foo([[0,1],[1,0]]) should equal -1",
+                    "assertion":" chai.expect(foo([[0,1],[1,0]])).to.eql(-1);"
+                },
+                {
+                    "title":"foo([[1,1],[1,1]]) should equal 0",
+                    "assertion":"chai.expect(foo([[1,1],[1,1]])).to.eql(0);"
+                },
+                {
+                    "title":"foo([[1,1],[0,0]]) should equal 0",
+                    "assertion":"chai.expect(foo([[1,1],[0,0]])).to.eql(0);"
+                },
+                {
+                    "title":"foo([[0,0],[0,0]]) should equal 0",
+                    "assertion":"chai.expect(foo([[0,0],[0,0]])).to.eql(0);"
+                },
+                {
+                    "title":"foo([[2,0],[0,1]]) should equal 2",
+                    "assertion":"chai.expect(foo([[2,0],[0,1]])).to.eql(2);"
+                },
+                {
+                    "title":"foo([[2,0],[1,1]]) should equal 2",
+                    "assertion":"chai.expect(foo([[2,0],[1,1]])).to.eql(2);"
+                },
+                {
+                    "title":"foo([[2,0],[1,7]]) should equal 14",
+                    "assertion":"chai.expect(foo([[2,0],[1,7]])).to.eql(14);"
+                },
+                {
+                    "title":"foo([[2,10],[1,7]]) should equal 4",
+                    "assertion":"chai.expect(foo([[2,10],[1,7]])).to.eql(4);"
+                },
+                {
+                    "title":"foo([[2,100],[1,7]]) should equal -86",
+                    "assertion":"chai.expect(foo([[2,100],[1,7]])).to.eql(-86);"
+                },
+                {
+                    "title":"foo([[229,1011],[3321,7221]]) should equal -1703922",
+                    "assertion":"chai.expect(foo([[229,1011],[3321,7221]])).to.eql(-1703922);"
+                }
+            ]
+        }
+    ]
+  }
+  

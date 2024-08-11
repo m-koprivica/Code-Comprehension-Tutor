@@ -1,0 +1,64 @@
+.attempt {
+	color: black;
+	display: flex;
+	font-size: 21px;
+	justify-content: space-between;
+	margin-top: 5px;
+}
+
+.question {
+	font-weight: bold;
+}
+
+.attempts {
+	list-style-type: none;
+	margin: 0;
+	margin-left: 25px;
+	padding: 0;
+}
+
+.questions {
+	list-style-type: none;
+	margin: 0;
+  	padding-left: 30%;
+	padding-right: 30%;
+	text-align: center;
+}
+
+.button {
+	background-color: white;
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: contain;
+	border: none;
+	cursor: pointer;
+}
+
+.start {
+	background-image: url("../icons/arrow-right-o.png");
+	height: 30px;
+	width: 30px;
+}
+
+.view {
+	background-image: url("../icons/eye-alt.png");
+	border-style: dashed;
+	border-width: 1px;
+	height: 20px;
+	width: 20px;
+	margin-right: 5px;
+}
+
+.expand {
+	height: 20px;
+	width: 20px;
+	margin-right: 5px
+}
+
+.expand.off {
+	background-image: url("../icons/arrows-expand-right.png");
+}
+
+.expand.on {
+	background-image: url("../icons/compress-right.png");
+}
