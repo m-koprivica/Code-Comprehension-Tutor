@@ -1,0 +1,54 @@
+/* REFERENCE: https://www.joshwcomeau.com/css/center-a-div/ */
+
+.main {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10%;
+}
+
+.main > * {
+    max-width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    padding: auto;
+}
+
+form > *{
+    max-width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    padding: auto;
+}
+
+.title {
+    font-weight: bold;
+}
+
+.errorLabel {
+    color: red;
+    max-width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.inputButton {
+    margin-left: 10px;
+}
+
+.consentText {
+    text-align: justify;
+    font-size: 13px;
+    width: 200px;
+}
+
+#password {
+    margin-left: 130px;
+}
+
+#passwordConfirmation {
+    margin-left: 225px;
+}
+
+.input.consent {
+    text-align: center;
+}

@@ -1,0 +1,42 @@
+{
+  "name": "project-groups-06-lab-a",
+  "version": "1.0.0",
+  "description": "**Project Name:** Code Comprehension Tutor  \r **Group Members:** Daniel Lee, Matija Koprivica, Arshvir Bhandal, Mark Zhu, Chuyi Zheng",
+  "main": "index.js",
+  "type": "module",
+  "nodemonConfig": {
+    "ignore": [
+      "*.json"
+    ]
+  },
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "start": "concurrently \"npm run server\" \"npm run test:watch\"",
+    "server": "nodemon index.js",
+    "test:report": "npx mocha ../test/alltest.test.js --reporter mocha-simple-html-reporter --reporter-options output=report.html",
+    "test:watch": "nodemon --watch ../test/alltest.test.js --exec \"npm run test:report\""
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.7.2",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "express-session": "^1.18.0",
+    "jsonwebtoken": "^9.0.2",
+    "mochai": "^0.2.5",
+    "ollama": "^0.5.2",
+    "prisma": "^5.16.1",
+    "uuid": "^10.0.0"
+  },
+  "devDependencies": {
+    "chai": "^5.1.1",
+    "concurrently": "^7.6.0",
+    "mocha": "^10.7.0",
+    "mocha-simple-html-reporter": "^2.0.0",
+    "nodemon": "^3.1.4"
+  }
+}
