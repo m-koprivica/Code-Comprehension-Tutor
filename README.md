@@ -1,8 +1,6 @@
 # Code Comprehension Tutor
 
-**Description**
-
-The project enables students to answer questions where they describe the purpose of a JavaScript function. To assess code comprehension, their description is used as a prompt in an LLM to generate a function. This function is evaluated against test cases to determine its functional equivalence to the original function. The function and test results are then shown to the student.
+The web application enables students to answer questions where they describe the purpose of a JavaScript function. To assess code comprehension, their description is used as a prompt in an LLM to generate a function. This function is evaluated against test cases to determine its functional equivalence to the original function. The function and test results are then shown to the student.
 
 The project also includes a gradebook and tools related to question management. The gradebook enables a researcher to view the scores of each student for each question. The question management tools allow a researcher to add new questions and edit the code or tests of existing ones.
 
@@ -57,5 +55,6 @@ There are over 80 unit tests in the project. However, considering most of the un
 4. Open Test Suite
 - In the server folder, open in your web browser “report.html”.
 
-**Attribution**
+# Attribution
+
 Developed by Matija Koprivica, Daniel Lee, Arshvir Bhandal, Chuyi Zheng, and Mark Zhu at UBC for CPSC 310: Introduction to Software Engineering.
